@@ -149,3 +149,118 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>رؤيا ليبيا - جاري التحميل</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .intro-container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .building {
+      width: 200px;
+      height: 200px;
+      border: 5px solid #333;
+      position: relative;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      animation: drawBuilding 2s ease forwards;
+    }
+
+    .building::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 60px;
+      width: 80px;
+      height: 40px;
+      background-color: #333;
+      animation: roofAppear 2s ease forwards 2s;
+      opacity: 0;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #222;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards 3s;
+    }
+
+    .person {
+      width: 50px;
+      height: 100px;
+      background-color: #0077aa;
+      border-radius: 10px;
+      position: absolute;
+      left: -60px;
+      bottom: 30px;
+      animation: movePerson 2s ease forwards 1s;
+    }
+
+    @keyframes movePerson {
+      to {
+        left: 60px;
+      }
+    }
+
+    @keyframes drawBuilding {
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    @keyframes roofAppear {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intro-container">
+    <div class="building"></div>
+    <div class="person"></div>
+    <div class="text">شركة رؤيا ليبيا للدعاية والإعلان</div>
+  </div>
+
+  <audio id="draw-sound" src="draw.mp3" preload="auto"></audio>
+
+  <script>
+    // تشغيل صوت التأثير عند بدء الأنميشن
+    window.addEventListener('load', () => {
+      const sound = document.getElementById('draw-sound');
+      sound.play().catch(e => {}); // بعض المتصفحات تحتاج تفاعل المستخدم أولاً
+    });
+
+    // الانتقال للموقع الرئيسي بعد 6 ثوانٍ
+    setTimeout(() => {
+      window.location.href = "index.html"; // غيّر الاسم لو صفحتك الرئيسية باسم آخر
+    }, 6000);
+  </script>
+
+</body>
+</html>
