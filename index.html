@@ -48,7 +48,7 @@
   </style>
 </head>
 <body>
-  <h1></h1>
+  <h1>لون الصفحة يتغير تلقائيًا</h1>
 
   <script>
     const colors = ["red", "yellow", "green", "blue"];
@@ -57,122 +57,65 @@
     setInterval(() => {
       document.body.style.backgroundColor = colors[index];
       document.body.style.color = (colors[index] === "yellow") ? "black" : "white";
-      <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>شعار متحرك في الخلفية</title>
+  <title>شعار متحرك كأنه في تلفاز</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
+      background-color: #000; /* خلفية داكنة */
       overflow: hidden;
-      background-color: #f0f0f0;
-      position: relative;
-      font-family: Arial;
-    }
-
-    .logo {
-      position: absolute;
-      width: 100px;
-      opacity: 0.1;
-      pointer-events: none;
-    }
-
-    /* حركة بسيطة للشعار */
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 10 شعارات ستظهر وتتحرك في أماكن مختلفة -->
-  <img src="logo.png" class="logo" style="top:10%; left:5%; animation: float 6s infinite;">
-  <img src="logo.png" class="logo" style="top:30%; left:20%; animation: float 8s infinite;">
-  <img src="logo.png" class="logo" style="top:50%; left:60%; animation: float 5s infinite;">
-  <img src="logo.png" class="logo" style="top:70%; left:40%; animation: float 7s infinite;">
-  <img src="logo.png" class="logo" style="top:85%; left:80%; animation: float 6s infinite;">
-  <img src="logo.png" class="logo" style="top:20%; left:75%; animation: float 9s infinite;">
-  <img src="logo.png" class="logo" style="top:60%; left:10%; animation: float 10s infinite;">
-  <img src="logo.png" class="logo" style="top:40%; left:45%; animation: float 5s infinite;">
-  <img src="logo.png" class="logo" style="top:10%; left:90%; animation: float 8s infinite;">
-  <img src="logo.png" class="logo" style="top:75%; left:25%; animation: float 7s infinite;">
-
-  <h1 style="text-align:center; padding-top: 200px;">مرحبًا بكم في موقع شركتنا</h1>
-
-</body>
-</html>
-      index = (index + 1) % colors.length;
-    }, 2000); // يتغير كل ثانيتين
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>شعار الشركة المتحرك</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #f0f0f0;
       height: 100vh;
     }
 
     .logo {
       position: absolute;
       width: 80px;
-      opacity: 0.08; /* شفافية الشعار */
-      pointer-events: none; /* حتى لا يؤثر على الضغط */
-      animation: float 6s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
-    }
-
-    h1 {
-      text-align: center;
-      padding-top: 200px;
-      font-family: Arial;
-      color: #333;
+      opacity: 0.06; /* خفة الشعار */
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>مرحبًا بكم في موقع شركتنا</h1>
+  <h1 style="color: white; text-align: center; padding-top: 200px;">موقع شركتنا</h1>
 
   <script>
-    const numberOfLogos = 15; // عدد الشعارات
-    const logoSrc = "logo.png"; // غيّره لاسم صورة الشعار
+    const numberOfLogos = 10;
+    const logos = [];
+    const logoSrc = "logo.png"; // غيّر اسم الصورة حسب اسم شعارك
 
+    // إنشاء الشعارات ووضعها في أماكن عشوائية أول مرة
     for (let i = 0; i < numberOfLogos; i++) {
       const img = document.createElement("img");
       img.src = logoSrc;
       img.className = "logo";
 
-      // توليد موقع عشوائي على الشاشة
-      const top = Math.random() * 90; // بين 0 و90%
-      const left = Math.random() * 90;
-      img.style.top = top + "%";
-      img.style.left = left + "%";
-
-      // إضافة حركة فردية لكل صورة
-      const duration = 4 + Math.random() * 6; // بين 4 و10 ثوانٍ
-      img.style.animationDuration = duration + "s";
+      img.style.top = Math.random() * 100 + "vh";
+      img.style.left = Math.random() * 100 + "vw";
 
       document.body.appendChild(img);
+      logos.push(img);
     }
+
+    // كل نصف ثانية، نحرك الشعارات قليلاً
+    setInterval(() => {
+      logos.forEach(logo => {
+        const top = parseFloat(logo.style.top);
+        const left = parseFloat(logo.style.left);
+
+        // حركة خفيفة عشوائية في كل اتجاه
+        const newTop = top + (Math.random() - 0.5) * 2;
+        const newLeft = left + (Math.random() - 0.5) * 2;
+
+        logo.style.top = Math.max(0, Math.min(100, newTop)) + "vh";
+        logo.style.left = Math.max(0, Math.min(100, newLeft)) + "vw";
+      });
+    }, 500);
   </script>
-  
+
 </body>
 </html>
