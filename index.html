@@ -57,6 +57,55 @@
     setInterval(() => {
       document.body.style.backgroundColor = colors[index];
       document.body.style.color = (colors[index] === "yellow") ? "black" : "white";
+      <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شعار متحرك في الخلفية</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      position: relative;
+      font-family: Arial;
+    }
+
+    .logo {
+      position: absolute;
+      width: 100px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    /* حركة بسيطة للشعار */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 10 شعارات ستظهر وتتحرك في أماكن مختلفة -->
+  <img src="logo.png" class="logo" style="top:10%; left:5%; animation: float 6s infinite;">
+  <img src="logo.png" class="logo" style="top:30%; left:20%; animation: float 8s infinite;">
+  <img src="logo.png" class="logo" style="top:50%; left:60%; animation: float 5s infinite;">
+  <img src="logo.png" class="logo" style="top:70%; left:40%; animation: float 7s infinite;">
+  <img src="logo.png" class="logo" style="top:85%; left:80%; animation: float 6s infinite;">
+  <img src="logo.png" class="logo" style="top:20%; left:75%; animation: float 9s infinite;">
+  <img src="logo.png" class="logo" style="top:60%; left:10%; animation: float 10s infinite;">
+  <img src="logo.png" class="logo" style="top:40%; left:45%; animation: float 5s infinite;">
+  <img src="logo.png" class="logo" style="top:10%; left:90%; animation: float 8s infinite;">
+  <img src="logo.png" class="logo" style="top:75%; left:25%; animation: float 7s infinite;">
+
+  <h1 style="text-align:center; padding-top: 200px;">مرحبًا بكم في موقع شركتنا</h1>
+
+</body>
+</html>
       index = (index + 1) % colors.length;
     }, 2000); // يتغير كل ثانيتين
   </script>
