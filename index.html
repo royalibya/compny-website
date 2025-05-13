@@ -238,18 +238,19 @@
     <div class="text">شركة رؤيا ليبيا للدعاية والإعلان</div>
   </div>
 
+  <!-- الصوت اختياري ويمكن أن يسبب تأخير -->
   <audio id="draw-sound" src="draw.mp3" preload="auto"></audio>
 
   <script>
-    // تشغيل صوت الرسم عند تحميل الصفحة
-    window.addEventListener('load', () => {
-      const sound = document.getElementById('draw-sound');
-      sound.play().catch(() => {}); // تجاوز منع الصوت التلقائي
-    });
+    // حاول تشغيل الصوت إذا كان ممكنًا
+    const sound = document.getElementById('draw-sound');
+    if (sound) {
+      sound.play().catch(() => {}); // لا تتوقف إن فشل
+    }
 
-    // الانتقال للصفحة الرئيسية بعد 6 ثوانٍ
+    // بعد 6 ثوانٍ، انتقل للصفحة الرئيسية
     setTimeout(() => {
-      window.location.href = "index.html"; // غير هذا لصفحتك الرئيسية إذا لزم
+      window.location.href = "index.html"; // غيّر اسم الصفحة لو لازم
     }, 6000);
   </script>
 
