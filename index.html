@@ -61,3 +61,65 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شعار متحرك كأنه في تلفاز</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000; /* خلفية داكنة */
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .logo {
+      position: absolute;
+      width: 80px;
+      opacity: 0.06; /* خفة الشعار */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color: white; text-align: center; padding-top: 200px;">موقع شركتنا</h1>
+
+  <script>
+    const numberOfLogos = 10;
+    const logos = [];
+    const logoSrc = "logo.png"; // غيّر اسم الصورة حسب اسم شعارك
+
+    // إنشاء الشعارات ووضعها في أماكن عشوائية أول مرة
+    for (let i = 0; i < numberOfLogos; i++) {
+      const img = document.createElement("img");
+      img.src = logoSrc;
+      img.className = "logo";
+
+      img.style.top = Math.random() * 100 + "vh";
+      img.style.left = Math.random() * 100 + "vw";
+
+      document.body.appendChild(img);
+      logos.push(img);
+    }
+
+    // كل ثانية، نحرك الشعارات قليلاً
+    setInterval(() => {
+      logos.forEach(logo => {
+        const top = parseFloat(logo.style.top);
+        const left = parseFloat(logo.style.left);
+
+        // حركة خفيفة عشوائية في كل اتجاه
+        const newTop = top + (Math.random() - 0.5) * 2;
+        const newLeft = left + (Math.random() - 0.5) * 2;
+
+        logo.style.top = Math.max(0, Math.min(100, newTop)) + "vh";
+        logo.style.left = Math.max(0, Math.min(100, newLeft)) + "vw";
+      });
+    }, 500);
+  </script>
+
+</body>
+</html>
