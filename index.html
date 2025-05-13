@@ -12,7 +12,7 @@
   <h1>تابعونا على مواقع التواصل</h1>
   <a href="https://www.instagram.com/roya_graphics?igsh=YWRoMDhmZG8zcnAw/yourcompany" target="_blank">إنستقرام</a>
   <a href="https://www.facebook.com/share/17zC4EsC7Q/?mibextid=wwXIfr/yourcompany" target="_blank">فيسبوك</a>
-  <a href="mailto:https://www.royagraphics.ly/">راسلنا</a>
+  <a href="mailto:Info@royagraphics.ly">راسلنا</a>
 </body>
 </html>
 <!DOCTYPE html>
@@ -29,5 +29,36 @@
     <img src=f7c56e8c-48bf-43bc-84a7-f7eff9986fd9.jpg alt="شعار الشركة" style="width: 150px;">
     <h1>‏welcome > our social media account</h1>
     <p>نحن نقدم أفضل الخدمات في مجالنا</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تغيير لون الصفحة</title>
+  <style>
+    body {
+      transition: background-color 1s ease;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial;
+      font-size: 24px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>لون الصفحة يتغير تلقائيًا</h1>
+
+  <script>
+    const colors = ["red", "yellow", "green", "blue"];
+    let index = 0;
+
+    setInterval(() => {
+      document.body.style.backgroundColor = colors[index];
+      document.body.style.color = (colors[index] === "yellow") ? "black" : "white";
+      index = (index + 1) % colors.length;
+    }, 2000); // يتغير كل تلات ثواني 
+  </script>
 </body>
 </html>
