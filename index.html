@@ -153,11 +153,11 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>رؤيا ليبيا - جاري التحميل</title>
+  <title>شركة رؤيا ليبيا</title>
   <style>
     body {
       margin: 0;
-      background-color: #f0f0f0;
+      background-color: white;
       overflow: hidden;
       font-family: 'Arial', sans-serif;
     }
@@ -165,7 +165,6 @@
     .intro-container {
       width: 100vw;
       height: 100vh;
-      background-color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -176,7 +175,7 @@
     .building {
       width: 200px;
       height: 200px;
-      border: 5px solid #333;
+      border: 5px solid #000;
       position: relative;
       transform: scaleY(0);
       transform-origin: bottom;
@@ -190,15 +189,15 @@
       left: 60px;
       width: 80px;
       height: 40px;
-      background-color: #333;
-      animation: roofAppear 2s ease forwards 2s;
+      background-color: #000;
       opacity: 0;
+      animation: roofAppear 2s ease forwards 2s;
     }
 
     .text {
       margin-top: 20px;
       font-size: 24px;
-      color: #222;
+      color: #000;
       opacity: 0;
       animation: fadeIn 2s ease forwards 3s;
     }
@@ -215,27 +214,19 @@
     }
 
     @keyframes movePerson {
-      to {
-        left: 60px;
-      }
+      to { left: 60px; }
     }
 
     @keyframes drawBuilding {
-      to {
-        transform: scaleY(1);
-      }
+      to { transform: scaleY(1); }
     }
 
     @keyframes roofAppear {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -250,15 +241,15 @@
   <audio id="draw-sound" src="draw.mp3" preload="auto"></audio>
 
   <script>
-    // تشغيل صوت التأثير عند بدء الأنميشن
+    // تشغيل صوت الرسم عند تحميل الصفحة
     window.addEventListener('load', () => {
       const sound = document.getElementById('draw-sound');
-      sound.play().catch(e => {}); // بعض المتصفحات تحتاج تفاعل المستخدم أولاً
+      sound.play().catch(() => {}); // تجاوز منع الصوت التلقائي
     });
 
-    // الانتقال للموقع الرئيسي بعد 6 ثوانٍ
+    // الانتقال للصفحة الرئيسية بعد 6 ثوانٍ
     setTimeout(() => {
-      window.location.href = "index.html"; // غيّر الاسم لو صفحتك الرئيسية باسم آخر
+      window.location.href = "index.html"; // غير هذا لصفحتك الرئيسية إذا لزم
     }, 6000);
   </script>
 
