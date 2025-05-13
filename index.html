@@ -65,60 +65,56 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>شعار متحرك كأنه في تلفاز</title>
+  <title>صورة تتحرك في الشاشة</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #000; /* خلفية داكنة */
       overflow: hidden;
-      height: 100vh;
+      background-color: #000;
     }
 
-   "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg"
+    img {
       position: absolute;
-      width: 80px;
-      opacity: 0.06; /* خفة الشعار */
-      pointer-events: none;
+      width: 100px; /* يمكنك تغيير الحجم */
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-  <h1 style="color: white; text-align: center; padding-top: 200px;">موقع شركتنا</h1>
+  <img src="019a4544-a1e5-4184-91a2-a113c8ea713a.jpg" id="movingImage">
 
   <script>
-    const numberOf019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs = 10;
-    const 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs = [];
-    const 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgSrc = "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg"; // اسم الشعار الجديد
+    const img = document.getElementById("movingImage");
+    let x = 100;
+    let y = 100;
+    let dx = 2; // سرعة التحرك أفقيًا
+    let dy = 2; // سرعة التحرك عموديًا
 
-    // إنشاء الشعارات ووضعها في أماكن عشوائية أول مرة
-    for (let i = 0; i < numberOf019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs; i++) {
-      const img = document.createElement("019a4544-a1e5-4184-91a2-a113c8ea713a.jpg");
-     019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.src = 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgSrc;
-     019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.className = "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg";
+    function moveImage() {
+      const imgWidth = img.offsetWidth;
+      const imgHeight = img.offsetHeight;
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
 
-      img.style.top = Math.random() * 100 + "vh";
-      img.style.left = Math.random() * 100 + "vw";
+      // تغيير الاتجاه عند الاصطدام بالحواف
+      if (x + dx > screenWidth - imgWidth || x + dx < 0) {
+        dx = -dx;
+      }
+      if (y + dy > screenHeight - imgHeight || y + dy < 0) {
+        dy = -dy;
+      }
 
-      document.body.appendChild(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg);
-      019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.push(img);
+      x += dx;
+      y += dy;
+
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+
+      requestAnimationFrame(moveImage);
     }
 
-    // كل نصف ثانية، نحرك الشعارات قليلاً
-    setInterval(() => {
-     019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs.forEach(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg => {
-        const top = parseFloat(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.top);
-        const left = parseFloat(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.left);
-
-        // حركة خفيفة عشوائية في كل اتجاه
-        const newTop = top + (Math.random() - 0.5) * 2;
-        const newLeft = left + (Math.random() - 0.5) * 2;
-
-        019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.top = Math.max(0, Math.min(100, newTop)) + "vh";
-       019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.left = Math.max(0, Math.min(100, newLeft)) + "vw";
-      });
-    }, 500);
+    moveImage();
   </script>
 
 </body>
