@@ -1,122 +1,151 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>روابط شركتنا</title>
-  <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    a { display: block; margin: 10px; font-size: 20px; text-decoration: none; color: #2b5cff; }
-  </style>
-</head>
-<body>
-  <h1>تابعونا على مواقع التواصل</h1>
-  <a href="https://www.instagram.com/roya_graphics?igsh=YWRoMDhmZG8zcnAw/yourcompany" target="_blank">إنستقرام</a>
-  <a href="https://www.facebook.com/share/17zC4EsC7Q/?mibextid=wwXIfr/yourcompany" target="_blank">فيسبوك</a>
-  <a href="mailto:Info@royagraphics.ly">راسلنا</a>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <title>roya libya compni</title>
-    <style>
-        body { font-family: Arial; background: #f2f2f2; padding: 40px; text-align: center; }
-        h1 { color: #333; }
-    </style>
-</head>
-<body>
-    <img src=f7c56e8c-48bf-43bc-84a7-f7eff9986fd9.jpg alt="شعار الشركة" style="width: 150px;">
-    <h1>‏welcome > our social media account</h1>
-    <p>نحن نقدم أفضل الخدمات في مجالنا</p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>تغيير لون الصفحة</title>
-  <style>
-    body {
-      transition: background-color 1s ease;
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial;
-      font-size: 24px;
-      color: white;
-  </style>
-</head>
-<body>
-  <h1>لون الصفحة يتغير تلقائيًا</h1>
-
-  <script>
-    const colors = ["red", "yellow", "green", "blue"];
-    let index = 0;
-
-    setInterval(() => {
-      document.body.style.backgroundColor = colors[index];
-      document.body.style.color = (colors[index] === "yellow") ? "black" : "white";
-      index = (index + 1) % colors.length;
-    }, 2000); // يتغير كل تلات ثواني
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>صورة تتحرك في الشاشة</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رؤيا ليبيا للدعاية والإعلان</title>
   <style>
     body {
       margin: 0;
-      overflow: hidden;
-      background-color: #000;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
     }
 
-    img {
-      position: absolute;
-      width: 100px; /* يمكنك تغيير الحجم */
-      height: auto;
+    header {
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-buttons a {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-buttons a:hover {
+      background-color: #555;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <img src="019a4544-a1e5-4184-91a2-a113c8ea713a.jpg" id="movingImage">
+  <header>
+    <h1>رؤيا ليبيا للدعاية والخدمات الإعلانية</h1>
+    <p>خبرة في الإبداع والحلول التسويقية المتكاملة</p>
+  </header>
 
-  <script>
-    const img = document.getElementById("movingImage");
-    let x = 100;
-    let y = 100;
-    let dx = 2; // سرعة التحرك أفقيًا
-    let dy = 2; // سرعة التحرك عموديًا
+  <nav>
+    <a href="#about">من نحن</a>
+    <a href="#services">الخدمات</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
 
-    function moveImage() {
-      const imgWidth = img.offsetWidth;
-      const imgHeight = img.offsetHeight;
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
+  <section id="about">
+    <h2>من نحن</h2>
+    <p>
+      شركة رؤيا ليبيا هي شركة متخصصة في تقديم خدمات الدعاية والإعلان بكافة أشكالها، بدءًا من التصميم الإبداعي
+      إلى تنفيذ الحملات الإعلانية المتكاملة، ونهدف إلى تحقيق التميز لعملائنا من خلال حلول مبتكرة وفعالة.
+    </p>
+  </section>
 
-      // تغيير الاتجاه عند الاصطدام بالحواف
-      if (x + dx > screenWidth - imgWidth || x + dx < 0) {
-        dx = -dx;
-      }
-      if (y + dy > screenHeight - imgHeight || y + dy < 0) {
-        dy = -dy;
-      }
+  <section id="services">
+    <h2>خدماتنا</h2>
+    <div class="services">
+      <div class="service">
+        <h3>تصميم إعلانات</h3>
+        <p>إعلانات مطبوعة ورقمية بأفكار جذابة واحترافية.</p>
+      </div>
+      <div class="service">
+        <h3>طباعة وتجهيز</h3>
+        <p>بروشورات، لافتات، بطاقات عمل، مواد دعائية.</p>
+      </div>
+      <div class="service">
+        <h3>إدارة وسائل التواصل</h3>
+        <p>إدارة صفحات فيسبوك وإنستغرام وتصميم محتوى بصري احترافي.</p>
+      </div>
+      <div class="service">
+        <h3>تصوير وإنتاج فيديو</h3>
+        <p>إعلانات فيديو، تصوير مناسبات، ومونتاج احترافي.</p>
+      </div>
+    </div>
+  </section>
 
-      x += dx;
-      y += dy;
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>العنوان: طرابلس، ليبيا</p>
+    <p>الهاتف: <a href="tel:+218914645601">0914645601</a></p>
+    <p>البريد الإلكتروني: <a href="mailto:Info@royagraphics.ly">Info@royagraphics.ly</a></p>
 
-      img.style.left = x + "px";
-      img.style.top = y + "px";
+    <div class="social-buttons">
+      <a href="https://www.royagraphics.ly/" target="_blank">الموقع الرسمي</a>
+      <a href="https://www.instagram.com/roya_graphics?igsh=YWRoMDhmZG8zcnAw" target="_blank">إنستغرام</a>
+      <a href="https://www.facebook.com/share/17zC4EsC7Q/?mibextid=wwXIfr" target="_blank">فيسبوك</a>
+      <a href="https://wa.me/218914645601" target="_blank">تواصل عبر واتساب</a>
+    </div>
+  </section>
 
-      requestAnimationFrame(moveImage);
-    }
-
-    moveImage();
-  </script>
+  <footer>
+    <p>&copy; 2025 شركة رؤيا ليبيا للدعاية والخدمات الإعلانية</p>
+  </footer>
 
 </body>
 </html>
-img.onerror = () => alert("تعذر تحميل الصورة - تأكد من الاسم والمسار!");
