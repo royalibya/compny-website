@@ -75,7 +75,7 @@
       height: 100vh;
     }
 
-    .logo {
+   "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg"
       position: absolute;
       width: 80px;
       opacity: 0.06; /* خفة الشعار */
@@ -88,35 +88,35 @@
   <h1 style="color: white; text-align: center; padding-top: 200px;">موقع شركتنا</h1>
 
   <script>
-    const numberOfLogos = 10;
-    const logos = [];
-    const logoSrc = "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg"; // اسم الشعار الجديد
+    const numberOf019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs = 10;
+    const 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs = [];
+    const 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgSrc = "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg"; // اسم الشعار الجديد
 
     // إنشاء الشعارات ووضعها في أماكن عشوائية أول مرة
-    for (let i = 0; i < numberOfLogos; i++) {
-      const img = document.createElement("img");
-      img.src = logoSrc;
-      img.className = "logo";
+    for (let i = 0; i < numberOf019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs; i++) {
+      const img = document.createElement("019a4544-a1e5-4184-91a2-a113c8ea713a.jpg");
+     019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.src = 019a4544-a1e5-4184-91a2-a113c8ea713a.jpgSrc;
+     019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.className = "019a4544-a1e5-4184-91a2-a113c8ea713a.jpg";
 
       img.style.top = Math.random() * 100 + "vh";
       img.style.left = Math.random() * 100 + "vw";
 
-      document.body.appendChild(img);
-      logos.push(img);
+      document.body.appendChild(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg);
+      019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.push(img);
     }
 
     // كل نصف ثانية، نحرك الشعارات قليلاً
     setInterval(() => {
-      logos.forEach(logo => {
-        const top = parseFloat(logo.style.top);
-        const left = parseFloat(logo.style.left);
+     019a4544-a1e5-4184-91a2-a113c8ea713a.jpgs.forEach(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg => {
+        const top = parseFloat(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.top);
+        const left = parseFloat(019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.left);
 
         // حركة خفيفة عشوائية في كل اتجاه
         const newTop = top + (Math.random() - 0.5) * 2;
         const newLeft = left + (Math.random() - 0.5) * 2;
 
-        logo.style.top = Math.max(0, Math.min(100, newTop)) + "vh";
-        logo.style.left = Math.max(0, Math.min(100, newLeft)) + "vw";
+        019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.top = Math.max(0, Math.min(100, newTop)) + "vh";
+       019a4544-a1e5-4184-91a2-a113c8ea713a.jpg.style.left = Math.max(0, Math.min(100, newLeft)) + "vw";
       });
     }, 500);
   </script>
