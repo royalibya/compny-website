@@ -48,7 +48,7 @@
   </style>
 </head>
 <body>
-  <h1>لون الصفحة يتغير تلقائيًا</h1>
+  <h1></h1>
 
   <script>
     const colors = ["red", "yellow", "green", "blue"];
@@ -109,5 +109,70 @@
       index = (index + 1) % colors.length;
     }, 2000); // يتغير كل ثانيتين
   </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شعار الشركة المتحرك</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      height: 100vh;
+    }
+
+    .logo {
+      position: absolute;
+      width: 80px;
+      opacity: 0.08; /* شفافية الشعار */
+      pointer-events: none; /* حتى لا يؤثر على الضغط */
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      padding-top: 200px;
+      font-family: Arial;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>مرحبًا بكم في موقع شركتنا</h1>
+
+  <script>
+    const numberOfLogos = 15; // عدد الشعارات
+    const logoSrc = "logo.png"; // غيّره لاسم صورة الشعار
+
+    for (let i = 0; i < numberOfLogos; i++) {
+      const img = document.createElement("img");
+      img.src = logoSrc;
+      img.className = "logo";
+
+      // توليد موقع عشوائي على الشاشة
+      const top = Math.random() * 90; // بين 0 و90%
+      const left = Math.random() * 90;
+      img.style.top = top + "%";
+      img.style.left = left + "%";
+
+      // إضافة حركة فردية لكل صورة
+      const duration = 4 + Math.random() * 6; // بين 4 و10 ثوانٍ
+      img.style.animationDuration = duration + "s";
+
+      document.body.appendChild(img);
+    }
+  </script>
+  
 </body>
 </html>
